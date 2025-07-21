@@ -1,39 +1,128 @@
-header{
+header {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 10px 30px;
     height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 1.6em;
+    letter-spacing: 0.1em;
 }
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #f6f8fa;
 }
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 2em;
+}
+
 .preview {
     display: flex;
     flex-direction: row;
+    gap: 32px;
     width: 100%;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-form{
-    width: 50%;
+form {
+    width: 340px;
+    border-radius: 10px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 1.5px solid #4CAF50;
+    outline: none;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    position: relative;
+}
+
+#main-submit {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 48px;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+    z-index: 10;
+}
+#main-submit:hover {
+    background: #388e3c;
+}
 .preview-image {
-    width: auto;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    min-width: 420px;
+    min-height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 16px;
 }
+
 .card-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.3em;
+    margin-bottom: 16px;
     margin-top: 0;
+    text-align: center;
 }
-.message{
+
+.message {
     resize: none;
+    min-height: 60px;
 }
-.message-label{
+
+.message-label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
+

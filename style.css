@@ -1,0 +1,39 @@
+header{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    height: 60px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.preview {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+form{
+    width: 50%;
+}
+
+.preview-image {
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.message{
+    resize: none;
+}
+.message-label{
+    display: block;
+    margin-bottom: 5px;
+}

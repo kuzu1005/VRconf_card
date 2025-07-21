@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>名刺づくり</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <header>ここにタイトル</header>
+    <main>
+        <h1>名刺が作れるよ！！！</h1>
+        <div class="preview">
+        <form>
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required maxlength="10"><br><br>
+            <label>VRChatの名前:</label>
+            <input type="text" id="inVRC" name="inVRC" required><br><br>
+            <label>プロフィール画像</label>
+            <input type="file" id="file-img" name="file-img" accept="image/*" required><br><br>
+            <label class="message-label">メッセージ</label>
+            <textarea id="message" name="message" cols="40" rows="4" class="message"></textarea><br><br>
+            <button type="submit">作成！</button>
+        </form>
+        <div class="preview-image" id="preview-image">
+        <h3 class="card-title">イメージ図</h3>
+        </div>
+        </div>
+        </main>
+</body>
+</html>

@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (response.ok) {
-                const result = await response.json();
                 alert("名刺を作成しました！");
             } else {
                 alert("エラーが発生しました。もう一度試してください。");

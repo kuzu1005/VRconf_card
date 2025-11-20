@@ -92,7 +92,7 @@ app.post('/api/create-business-card', upload.single('file-img'), async (req, res
 });
 
 // サーバーを起動
-app.listen(port, () => {
+app.listen(port,'0.0.0.0', () => {
     console.log(`サーバーが http://localhost:${port} で起動しました。`);
     console.log('ブラウザで http://localhost:3000/index.html にアクセスしてください。');
 });

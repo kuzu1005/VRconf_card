@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/kuzu1005/VRconf_card#readme",
   "dependencies": {
+    "@google-cloud/storage": "^7.17.2",
     "express": "^5.1.0",
-    "multer": "^2.0.2"
+    "firebase-admin": "^13.5.0",
+    "install": "^0.13.0",
+    "multer": "^2.0.2",
+    "npm": "^9.6.5"
   }
 }

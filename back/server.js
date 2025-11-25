@@ -1,3 +1,4 @@
+
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -27,8 +28,8 @@ const upload = multer({
 });
 
 // 静的ファイルの配信設定
-app.use(express.static(path.join(__dirname)));
-app.use(express.static(path.join(__dirname, '../front'))); // frontフォルダを静的配信
+// frontフォルダを静的配信
+app.use(express.static(path.join(__dirname, '../front'))); 
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../front/index.html'));

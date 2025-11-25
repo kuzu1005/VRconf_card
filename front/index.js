@@ -1,36 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
-    const submitButton = document.getElementById('main-submit');
-    const previewImageDiv = document.getElementById('preview-image');
-
-    const fileInput = document.getElementById('file-img');
-    fileInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                previewImageDiv.querySelectorAll('.preview-img').forEach(img => img.remove());
-                
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.alt = 'プロフィール画像のプレビュー';
-                img.classList.add('preview-img');
-                img.style.maxWidth = '100px';
-                img.style.maxHeight = '100px';
-                
-                const cardTitle = previewImageDiv.querySelector('.card-title');
-                if (cardTitle) {
-                    previewImageDiv.insertBefore(img, cardTitle.nextSibling);
-                } else {
-                    previewImageDiv.appendChild(img);
-                }
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-    submitButton.addEventListener('click', (event) => {
+    
+    // Use submit event to handle both button clicks and Enter key presses
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
         
         if (!form.reportValidity()) {

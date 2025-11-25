@@ -14,7 +14,7 @@
     <main>
         <h1>名刺が作れるよ！！！</h1>
         <div class="preview">
-        <form>
+        <form id="card-form">
             <label for="name">名前:</label>
             <input type="text" id="name" name="name" required maxlength="10"><br><br>
             <label>VRChatの名前:</label>
@@ -27,7 +27,7 @@
         <div class="preview-image" id="preview-image">
         <h3 class="card-title">イメージ図</h3>
         </div>
-        <button type="submit" id="main-submit">作成！</button>
+        <button type="submit" id="main-submit" form="card-form">作成！</button>
         </div>
     </main>
 </body>

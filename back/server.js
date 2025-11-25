@@ -9,7 +9,7 @@ const serviceAccount = require('../vrconf-6e247-firebase-adminsdk-fbsvc-b2e2cb85
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    storageBucket: 'gs://vrconf-6e247.firebasestorage.app' // FirebaseプロジェクトのStorageバケット名に置き換える
+    storageBucket: 'vrconf-6e247.firebasestorage.app' // FirebaseプロジェクトのStorageバケット名に置き換える (gs:// は不要)
 });
 
 const db = admin.firestore();
@@ -88,7 +88,8 @@ app.post('/api/create-business-card', upload.single('file-img'), async (req, res
 
     } catch (error) {
         console.error('データの保存またはアップロード中にエラーが発生しました:', error);
-        res.status(500).json({ error: 'サーバーエラーにより名刺情報を保存できませんでした。' });
+        // Return detailed error message for debugging
+        res.status(500).json({ error: 'サーバーエラーにより名刺情報を保存できませんでした。', details: error.message });
     }
 });
 

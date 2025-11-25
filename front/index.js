@@ -1,20 +1,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+    const form = document.getElementById('card-form');
     
-    // Use submit event to handle both button clicks and Enter key presses
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        
-        if (!form.reportValidity()) {
-            return;
-        }
+    if (form) {
+        // Use submit event to handle both button clicks and Enter key presses
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            if (!form.reportValidity()) {
+                return;
+            }
 
-        // フォームデータを作成
-        const formData = new FormData(form);
+            // フォームデータを作成
+            const formData = new FormData(form);
 
-        sendData(formData);
-    });
+            sendData(formData);
+        });
+    }
 });
 
 async function sendData(data) {

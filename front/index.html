@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +7,51 @@
     <title>名刺づくり</title>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-    <script src="sketch.js"></script>
-    <script src="index.js"></script>
-    <header>ここにタイトル</header>
+    <header>VR Chat 名刺ジェネレーター</header>
     <main>
-        <h1>名刺が作れるよ！！！</h1>
-        <div class="preview">
-        <form id="card-form">
-            <label for="name">名前:</label>
-            <input type="text" id="name" name="name" required maxlength="10"><br><br>
-            <label>VRChatの名前:</label>
-            <input type="text" id="inVRC" name="inVRC" required><br><br>
-            <label>プロフィール画像</label>
-            <input type="file" id="file-img" name="file-img" accept="image/*" required><br><br>
-            <label class="message-label">メッセージ</label>
-            <textarea id="message" name="message" cols="40" rows="4" class="message"></textarea><br><br>
-        </form>
-        <div class="preview-image" id="preview-image">
-        <h3 class="card-title">イメージ図</h3>
-        </div>
-        <button type="submit" id="main-submit" form="card-form">作成！</button>
+        <h1>名刺を作ろう！</h1>
+        
+        <div class="container">
+            <!-- 入力フォームエリア -->
+            <div class="form-area">
+                <form id="card-form">
+                    <div class="form-group">
+                        <label for="name">名前 (10文字以内):</label>
+                        <input type="text" id="name" name="name" required maxlength="10" placeholder="例: 佐藤 太郎">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inVRC">VRChat ID:</label>
+                        <input type="text" id="inVRC" name="inVRC" required placeholder="例: satotaro">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file-img">プロフィール画像:</label>
+                        <input type="file" id="file-img" name="file-img" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">メッセージ:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="一言メッセージを入力..."></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- プレビューエリア -->
+            <div class="preview-area">
+                <h3 class="card-title">プレビュー</h3>
+                <div id="preview-canvas-container"></div>
+                <p class="hint">画像を選択し、名前を入力するとプレビューが更新されます</p>
+                
+                <button type="submit" id="main-submit" form="card-form">作成！</button>
+            </div>
         </div>
     </main>
+
+    <!-- p5.js ライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <!-- ロジック -->
+    <script src="sketch.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
